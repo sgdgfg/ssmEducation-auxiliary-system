@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.studyDao">
+	<insert id="add" parameterType="pojo.study" >
+	        insert into study  values (#{userid},#{lessonid},#{time})
+	    </insert><delete id="delete" parameterType="pojo.study" >
+	        delete from study where 
+	    </delete>  <select id="get" parameterType="String" resultType="pojo.study">
+	        select * from   study  where  lessonid=#{lessonid}
+	    </select>
+	<select id="list" resultType="pojo.study">
+	        select * from  study
+	    </select>
+	<select id="getlessonnumber" parameterType="String" resultType="int">
+	        select  count(*)  from  study where lessonid=#{lessonid}
+	    </select>
+</mapper>

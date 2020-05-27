@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.theclassDao"> <insert id="add" parameterType="pojo.theclass" >
+	        insert into theclass  values (#{id},#{classname},#{teacherid},#{introduce},#{link})
+	    </insert><delete id="delete" parameterType="pojo.theclass" >
+	        delete from theclass where id=#{id}
+	    </delete>  <select id="get" parameterType="String" resultType="pojo.theclass">
+	        select * from   theclass  where  id=#{id}
+	    </select>  <select id="list" resultType="pojo.theclass">
+	        select * from  theclass
+	    </select>
+	<select id="getclassidList" parameterType="String" resultType="pojo.theclass">
+	select * from   theclass  where  teacherid=#{teacherid}
+</select>
+	<select id="getclassedList" parameterType="String" resultType="pojo.theclass">
+	select * from   theclass  where  id=#{id}
+</select>
+	<select id="getclassnumber"   resultType="int">
+	select count(*) from   theclass
+</select>
+		</mapper>

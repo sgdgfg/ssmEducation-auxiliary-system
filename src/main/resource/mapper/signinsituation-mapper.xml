@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.signinsituationDao"> <insert id="add" parameterType="pojo.signinsituation" >
+	        insert into signinsituation  values (#{time},#{number})
+	    </insert><delete id="delete" parameterType="pojo.signinsituation" >
+	        delete from signinsituation where time=#{time}
+	    </delete>  <select id="get" parameterType="String" resultType="pojo.signinsituation">
+	        select * from   signinsituation  where time=#{time}
+	    </select>
+	<select id="list" resultType="pojo.signinsituation">
+	          select * from   teach.signinsituation order by time desc LIMIT 0,7  ;
+	    </select>
+
+	<update id="update" parameterType="pojo.signinsituation" >
+	        update signinsituation set number=#{number}   where time=#{time}
+	    </update>
+	<select id="getalive" parameterType="String" resultType="pojo.signinsituation">
+	          select * from   teach.signinsituation where time like #{time%}
+	    </select>
+
+
+</mapper>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .moban{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.js"></script>
+
+<div id="aa"   class="moban"></div>
+<div id="data"  >
+
+</div>
+
+<button onclick="aa(this)">D:/</button>
+<button id="button">button</button>
+<script>
+
+    $("#button").click(function(){
+        var name="name1";
+        var age = "age11";
+        var args={userName:name,userAge:age};
+        console.log(args);
+        $.ajax({
+            url:"register.do",
+            cache:false,
+            data:args,
+            type:"post",
+            success:function(result){
+                alert(result.name);
+            }
+        });
+    });
+
+
+
+    function aa(e)
+    {
+      console.log( "e  :   " +e.innerText);
+        var name=e.innerText;
+
+        var args={pathname:name};
+        console.log(args);
+    $.ajax({
+        url:"pdf.do",
+        cache:false,
+        data:args,
+        type:"post",
+        success:function(data){
+            $("#data").innerText="";
+            console.log(data);
+            var da=data.split(',');
+            for(var i=0;i<da.length;i++){
+            var tt= $("#aa").clone();
+
+                tt.attr("onclick","aa(this)");
+                tt.removeClass("moban");
+                tt.text(da[i]);
+            $("#data").append(tt);
+                $("#data").append("<br>");
+            }
+        },
+        error:function (data) {
+            alert(data.error,data.message);
+        }
+    });}
+</script>
+
+</body>
+</html>

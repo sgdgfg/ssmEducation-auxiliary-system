@@ -1,0 +1,185 @@
+ <html lang="zh" data-hairline="true" data-theme="light">
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  	<title>
+     问题</title>
+  
+  	<style>
+  
+  .u-safeAreaInset-top {
+    height: constant(safe-area-inset-top) !important;
+    height: env(safe-area-inset-top) !important;
+    
+  }
+  .u-safeAreaInset-bottom {
+    height: constant(safe-area-inset-bottom) !important;
+    height: env(safe-area-inset-bottom) !important;
+    
+  }
+  .tiezimoban{
+ 	 display: none;
+  }
+  </style>
+
+
+  <link href="css/question1.css" rel="stylesheet">
+  
+  <link href="css/question2.css" rel="stylesheet">
+  
+   
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+ </script>
+ 
+  </head>
+  <body> 
+ 
+ <div class="Modal-inner">
+<div class="Modal-content">
+<form class="Ask-form" novalidate="" method="post" action="app/askquestion">
+<div style=" /*transition: height 300ms ease-out 0s; height: 247px;*/"    >
+<div class="Ask-items">
+<div class="Ask-item Ask-titleWrapper">
+<img class="Avatar Avatar--medium Ask-avatar"  id="headerimg" width="40" height="40" src="img/touxiang.jpg"  >
+<div class="Ask-title">
+<div class="AskTitle">
+<div class="AskTitle-text"></div>
+<div>
+<div class="Popover">
+<label class="AskTitle-input Input-wrapper Input-wrapper--spread Input-wrapper--multiline Input-wrapper--large">
+<textarea    name="title" id="title"   style=" border:1px solid #ebebeb;" required="" rows="1" autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" aria-activedescendant="AutoComplete159-group-title--1" id="Popover158-toggle" aria-haspopup="true" aria-owns="Popover158-content" class="Input  " placeholder="写下问题标题" style="font-size: 18px;"></textarea>
+</label>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="Popover">
+<label class="AskTitle-input Input-wrapper Input-wrapper--spread Input-wrapper--multiline Input-wrapper--large">
+ 
+</label>
+
+  
+ <div contenteditable="true" id="content"  name="content" required=""    style="font-size: 18px; border:1px  solid  #8b95a5;  ">
+     <br/>
+     <br/>
+     <br/>
+ </div>
+   <div class="Ask-item">
+ <div class="AskDetail">
+ <div class="AskDetail-actionsWrapper">
+ <div class="AskDetail-actions">
+ 	
+ <button aria-label="展开工具栏" data-tooltip="展开工具栏" data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true" type="button" class="Button Editable-control Button--plain">
+ <svg class="Zi Zi--Format" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+ <path d="M6.295 15.4L5.06 19H3L7.684 6h1.813l4.684 13h-2.06l-1.235-3.6h-4.59zM17.092 19c-1.548 0-2.647-.962-2.647-2.391 0-1.428 1.063-2.27 2.916-2.384l1.782-.103v-.43c0-.653-.419-.996-1.286-.996-.724 0-1.194.25-1.323.663l-.046.147H14.7l.027-.234c.161-1.366 1.436-2.24 3.196-2.24 1.93 0 3.076.987 3.076 2.66v5.188h-1.81v-.75c-.5.56-1.243.87-2.098.87zM6.89 13.646h3.4L8.59 8.69l-1.7 4.956zM17.582 15.7c-.901.06-1.267.325-1.267.842 0 .504.439.827 1.146.827.973 0 1.682-.6 1.682-1.383v-.385l-1.56.1z">
+ </path>
+ </svg>
+ </button>
+ <button  style="position: relative;"   aria-label="插入图片" data-tooltip="插入图片" type="button"   data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true"  class="Button Editable-control Button--plain">
+ <svg class="Zi Zi--InsertImage" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+ <path d="M21 17.444C21 18.3 20.1 19 19 19H5c-1.1 0-2-.7-2-1.556V6.556C3 5.7 3.9 5 5 5h14c1.1 0 2 .7 2 1.556v10.888zm-9.437-3.919a.5.5 0 0 1-.862.013l-1.26-2.065a.5.5 0 0 0-.861.012l-2.153 3.767a.5.5 0 0 0 .435.748h10.292a.5.5 0 0 0 .438-.741L14.573 9.78a.5.5 0 0 0-.872-.006l-2.138 3.75z" fill-rule="evenodd">
+ </path>
+ </svg>
+<input id="file" type="file" accept="image/*"  style=" position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;"   onchange="huixian()" />
+ </button>
+ <button aria-label="上传视频"   style="position: relative;"  data-tooltip="上传视频" data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true" type="button" class="Button Editable-control Button--plain">
+ <svg class="Zi Zi--InsertVideo" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+ <path d="M10.546 15c-.466.273-.86.053-.86-.5V9.505c0-.565.385-.778.86-.501l4.278 2.497c.466.272.475.726 0 1.003L10.546 15zM5 5S3 5 3 7v10s0 2 2.002 2H19c2 0 2-2 2-2V7c0-2-2-2-2-2H5z" fill-rule="evenodd">
+ </path>
+ </svg>
+ <input type="file" accept="video/*"  style=" position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;"    />
+ 
+ </button>
+ </div>
+ </div>
+  
+<div class="Ask-footer">
+<div>
+<div class="AskOptions">
+<label for="anonymous-checkbox" class="AskOptions-label">
+<input id="anonymous-checkbox" class="AskOptions-checkbox" type="checkbox">
+匿名提问</label>
+</div>
+</div>
+<div class="Ask-footer-buttonWrapper">
+<button   type="button" onclick="f()" class="Button Button--primary Button--blue">
+发布问题</button>
+</div>
+
+</div>
+ </div>
+   </div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</body>
+
+  <script>
+      function f() {
+
+          $.ajax({
+              url:'app/askquestion',
+              type: 'POST',
+
+              data:{'title':$("#title").val(),'content':$("#content").html()},
+
+
+              success: function (data) {
+                  var path=data;
+                  var img=$("<img style='width: 100px;height: 100px;' src="+path+" />")
+                  $("#content").append("<div style='width: 100%'>")
+                  $("#content").append(img)
+                  $("#content").append("</div>")
+              },
+              error: function (err) {
+              }
+          })
+
+          window.close();
+          window.parent.close()
+      }
+
+
+
+
+
+   function huixian(img) {
+       var file = $('#file')[0].files[0];
+       var formData = new FormData();
+       formData.append("file", file);
+
+       $.ajax({
+           url: "app/questionImg",//请求路径
+           type: 'POST',
+           cache: false,
+           data: formData,
+           processData: false,
+           contentType: false,
+           success: function (data) {
+               var path=data;
+               var img=$("<img style='width: 100px;height: 100px;' src="+path+" />")
+               $("#content").append("<div style='width: 100%'>")
+               $("#content").append(img)
+               $("#content").append("</div>")
+           },
+           error: function (err) {
+           }
+       });
+
+   }
+
+      if($.cookie('touxiang').length>0){
+          $("#headerimg").attr('src',$.cookie('touxiang'));
+      }
+      console.log($.cookie('touxiang'));
+
+  </script>
+ </html>
+ 

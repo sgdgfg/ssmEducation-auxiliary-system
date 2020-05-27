@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.questionmarkDao">
+	<insert id="add" parameterType="pojo.questionmark" >
+	        insert into questionmark  values (#{questionid},#{questiontitle},#{userid})
+	    </insert><delete id="delete" parameterType="pojo.questionmark" >
+	        delete from questionmark where questionid=#{questionid} and userid=#{userid}
+	    </delete>  <select id="get" parameterType="pojo.questionmark" resultType="pojo.questionmark">
+	        select * from   questionmark  where  questionid=#{questionid} and userid=#{userid}
+	    </select>  <select id="list" resultType="pojo.questionmark">
+	        select * from  questionmark
+	    </select>
+</mapper>

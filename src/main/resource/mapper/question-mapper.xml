@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.inQuestion">
+    <insert id="add" parameterType="pojo.question" >
+	        insert into question  values (#{id},#{userid},#{title},#{content},#{link},#{time})
+	    </insert>
+
+    <delete id="delete" parameterType="pojo.question" >
+	        delete from question where id= #{id}
+	    </delete>
+
+    <select id="get" parameterType="String" resultType="pojo.question">
+	        select * from   question  where id= #{id}
+	    </select>
+
+    <update id="update" parameterType="pojo.question" >
+	        update question set name=#{name} where id=#{id}
+	    </update>
+    <select id="list" resultType="pojo.question">
+	        select * from  question order by time desc
+	    </select>
+
+</mapper>
+

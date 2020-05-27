@@ -1,0 +1,249 @@
+﻿<html lang="zh" data-hairline="true" data-theme="light">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title >课程</title>
+    <style>
+
+        .u-safeAreaInset-top {
+            height: constant(safe-area-inset-top) !important;
+            height: env(safe-area-inset-top) !important;
+
+        }
+        .u-safeAreaInset-bottom {
+            height: constant(safe-area-inset-bottom) !important;
+            height: env(safe-area-inset-bottom) !important;
+
+        }
+        .tiezimoban{
+            display: none;
+        }
+    </style>
+
+    <link href="css/question1.css" rel="stylesheet">
+
+    <link href="css/question2.css" rel="stylesheet">
+
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+
+</head>
+
+
+
+<body>
+
+<div id="root">
+    <div>
+        <div class="LoadingBar">
+        </div>
+        <div>
+            <header role="banner" class="Sticky AppHeader" data-za-module="TopNavBar">
+                <div class="AppHeader-inner">
+
+                    <ul role="navigation" class="Tabs AppHeader-Tabs">
+                        <li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+                            <a class="Tabs-link AppHeader-TabsLink " href="student.html" data-za-not-track-link="true">
+                                首页</a>
+                        </li>
+                        <li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+                            <a class="Tabs-link AppHeader-TabsLink" href="questionList.html" data-za-not-track-link="true">
+                                问题</a>
+                        </li>
+                        <li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+                            <a class="Tabs-link AppHeader-TabsLink is-active " href="lessonList.html" data-za-not-track-link="true">
+                                课程</a>
+                        </li>
+                        <li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+                            <a class="Tabs-link AppHeader-TabsLink  " href="document.html" data-za-not-track-link="true">
+                                资料下载</a>
+                        </li>
+                    </ul>
+                    <div class="SearchBar" role="search" data-za-module="PresetWordItem">
+
+                        <button onclick="tiwen()" type="button" class="Button SearchBar-askButton Button&#45;&#45;primary Button&#45;&#45;blue">
+                            提问</button>
+                    </div>
+                    <div class="AppHeader-userInfo">
+                        <button type="button" class="Button PushNotifications-icon AppHeader-notifications Button&#45;&#45;plain">
+<span style="display:inline-flex;align-items:center">
+​<svg class="Zi Zi&#45;&#45;Bell" fill="currentColor" viewBox="0 0 24 24" width="22" height="22">
+<path d="M4.523 15.076l.804-6.757a6.753 6.753 0 0 1 4.945-5.7 1.823 1.823 0 0 1 3.623 0 6.753 6.753 0 0 1 4.945 5.7l.804 6.757a2.293 2.293 0 0 0 1.712 2.108 1.093 1.093 0 0 1-.297 2.15H3.108a1.093 1.093 0 0 1-.297-2.15 2.293 2.293 0 0 0 1.712-2.108zM12.083 23a2.758 2.758 0 0 1-2.753-2.509.229.229 0 0 1 .232-.24h5.043a.229.229 0 0 1 .232.24 2.759 2.759 0 0 1-2.753 2.51z">
+</path>
+</svg>
+</span>
+
+                        </button>
+
+
+                        <div class="AppHeader-profile">
+                            <a href="personEdit.html">
+                                <button type="button" class="Button AppHeader-profileEntry Button--plain">
+                                    <img id="headerimg" class="Avatar AppHeader-profileAvatar" width="30" height="30" src=""  >
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
+
+        </div>
+        <main role="main" class="App-main">
+            <div class="Topstory">
+                <div class="Topstory-container">
+                    <div class="Topstory-mainColumn">
+                        <div class="Topstory-mainColumnCard">
+                            <div class="Card Topstory-noMarginCard Topstory-tabCard">
+
+                                <div>
+                                    <div class="Sticky">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- &lt;!&ndash; 模板          0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 &ndash;&gt;-->
+                            <div class=" tiezimoban  Card TopstoryItem TopstoryItem-isRecommend" tabindex="0">
+                                <div class="Feed">
+                                    <div class="ContentItem AnswerItem"  name="928976504" itemprop="answer" itemtype="http://schema.org/Answer" itemscope="">
+                                        <h2 class="ContentItem-title">
+                                            <div itemprop="zhihu:question" itemtype="http://schema.org/Question" itemscope="">
+                                                <a target="_blank" data-za-detail-view-element_name="Title" data-za-detail-view-id="2812" href="/question/315387406/answer/928976504">
+                                                </a>
+                                            </div>
+                                        </h2>
+
+                                        <div class="RichContent is-collapsed">
+
+                                            <div class="RichContent-inner">
+                                                <video
+                                                        id="video"
+                                                        src="video/video1.mp4"
+                                                        controls = "true"
+                                                        poster="images.jpg"
+                                                        preload="auto"
+                                                        webkit-playsinline="true"
+                                                        playsinline="true"
+                                                        x-webkit-airplay="allow"
+                                                        x5-video-player-type="h5"
+                                                        x5-video-player-fullscreen="true"
+                                                        x5-video-orientation="portraint"
+                                                        style="object-fit:fill">
+
+                                                </video>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--   模板          0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-->
+
+
+
+                            <div id="TopstoryContent" class="Topstory-content">
+                                <div class="ListShortcut"  >
+                                    <div class="Topstory-recommend"  id="questionContentRongqi" >
+                                        <div class="">
+
+
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<button onclick="fatie('123','123','1','http://www.baidu.com')">fa</button>
+<script>
+
+    function fatie( ti,vi,hr){
+
+        $('.tiezimoban a:first-child').text(ti);
+        $('.tiezimoban a:first-child').attr('href','videobf.html?a='+hr);
+        /* $('.tiezimoban span:nth-child(2)').css("color", "#CD00CD"); */
+        /*  $('.tiezimoban span:nth-child(1)').text('2222'); */
+        $("#video").attr('src',vi)
+
+
+
+
+        var clone=$(".tiezimoban").clone(true);
+        clone.removeClass("tiezimoban");
+
+        $(".Topstory-recommend").append(clone);}
+
+
+</script>
+
+<script>
+    function tiwen(){
+        window.open('askquestion.html', 'newwindow', 'height=300, width=500, top=500, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+    }
+
+</script>
+
+
+<script>
+
+
+    $.ajax({
+        url:"app/getlessonlist",
+        contentType:"application/json;charset=UTF-8",
+        data:JSON.stringify("{'name':'ethan','age':'123'}"),
+        dataType:"text",
+        type:"post",
+        success:function(data){
+            var jo=JSON.parse(data);
+            for(var i=0;i<jo.length;i++)
+                fatie(jo[i].title,jo[i].videolink,jo[i].id);
+            console.log(data);
+        },
+        error:function (data) {
+            console.log(data.error,data.message,"123456789===--=-=-=-==-=-=-=-=-=-=-====-=-=-");
+        }
+    });
+    /*    setTimeout( chongzai, 1000 * 4 );*/
+    function chongzai(){
+        //   setTimeout( chongzai, 1000 * 10 );
+        $.ajax({
+            url:"app/getlessonlist",
+            contentType:"application/json;charset=UTF-8",
+            data:JSON.stringify("{'name':'ethan','age':'123'}"),
+            dataType:"text",
+            type:"post",
+            success:function(data){
+                var jo=JSON.parse(data);
+                //   var clone=$(".Topstory-recommend").clone(true);
+                //$(".Topstory-recommend").empty();
+                $("#questionContentRongqi").empty();
+                for(var i=0;i<jo.length;i++)
+                    fatie(jo[i].title,jo[i].videolink,jo[i].id );
+                console.log(data);
+            },
+            error:function (data) {
+                console.log(data.error,data.message);
+            }
+        });
+    }
+</script>
+
+<script>
+    if($.cookie('touxiang').length>0);{
+        $("#headerimg").attr('src',$.cookie('touxiang'));
+    }
+    console.log($.cookie('touxiang'));
+
+</script>
+
+
+</body>
+</html>

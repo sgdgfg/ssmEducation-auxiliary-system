@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+
+ <a href="file/info.log">aa</a>
+ <a href="file/in.txt">aabb</a>
+
+ <script>
+ var tt={};
+ tt.questionid=4;
+ tt.questiontitle="223"
+ tt.userid=8
+     $.ajax({
+         url:"app/show1",
+         contentType:"application/json",
+         data:JSON.stringify(tt),  //json字符串
+         dataType:"json",
+         type:"post",
+         success:function(data){
+             console.log(data);
+         },
+         error:function (data) {
+             alert(data.error,data.message);
+         }
+     });
+ </script>
+
+</body>
+</html>

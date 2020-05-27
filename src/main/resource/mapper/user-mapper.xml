@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.inUser">
+    <insert id="add" parameterType="pojo.user" >
+	        insert into user (id,name,sex,password,email,power) values (#{id},#{name},#{sex},#{password},#{email},#{power})
+	    </insert>
+	<insert id="adduser" parameterType="pojo.user" >
+	        insert into user  values (#{id},#{password},#{email})
+	    </insert>
+
+    <delete id="delete" parameterType="String" >
+	        delete from user where id= #{id}
+	    </delete>
+
+    <select id="get" parameterType="String" resultType="pojo.user">
+	        select * from   user  where id= #{id}
+	    </select>
+
+    <update id="update" parameterType="pojo.user" >
+	        update user set name=#{name},sex=#{sex},email=#{email},link=#{link},power=#{power}  where id=#{id}
+	    </update>
+    <select id="list" resultType="pojo.user">
+	        select * from  user
+	    </select>
+	<select id="getnumber" resultType="int">
+	        select count(*) from  user where power=2
+	    </select>
+	<select id="getusernumber" resultType="int">
+	        select count(*) from  user where power=1 or power=2
+	    </select>
+</mapper>
+

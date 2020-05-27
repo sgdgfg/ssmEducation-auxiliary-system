@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.answerDao">
+    <insert id="add" parameterType="pojo.answer" >
+	        insert into answer  values (#{questionid},#{userid},#{content},#{link},#{time})
+	    </insert>
+
+    <delete id="delete" parameterType="pojo.answer" >
+	        delete from answer where questionid= #{questionid} and userid=#{userid}
+	    </delete>
+
+    <select id="get" parameterType="String" resultType="pojo.answer">
+	        select * from  answer  where questionid= #{questionid}
+	    </select>
+	<select id="getnumber" parameterType="String" resultType="String">
+	        select count(*) from  answer  where questionid= #{questionid}
+	    </select>
+
+    <update id="update" parameterType="pojo.answer" >
+	        update answer set name=#{documentname} where id=#{id}
+	    </update>
+    <select id="list" parameterType="String" resultType="pojo.answer">
+	        select * from  answer where questionid=#{questionid};
+	    </select>
+</mapper>

@@ -1,0 +1,469 @@
+<html lang="zh" data-hairline="true" data-theme="light">
+<head>
+    <meta charset="utf-8">
+
+    <title> 
+    问题</title>
+
+    <style>
+
+        .u-safeAreaInset-top {
+            height: constant(safe-area-inset-top) !important;
+            height: env(safe-area-inset-top) !important;
+
+        }
+        .u-safeAreaInset-bottom {
+            height: constant(safe-area-inset-bottom) !important;
+            height: env(safe-area-inset-bottom) !important;
+
+        }
+        .tiezimoban{
+            display: none;
+        }
+		.answermoban{
+		    display: none;
+		}
+    </style>
+
+    <link href="css/question1.css" rel="stylesheet">
+
+    <link href="css/question2.css" rel="stylesheet">
+
+
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+	</script>
+
+	<script  src="js/jquery.cookie.js"></script>
+
+
+
+</head>
+<body>
+
+
+
+
+
+<div id="root">
+	<div>
+		<div class="LoadingBar">
+		</div>
+		<div>
+			<header role="banner" class="Sticky AppHeader" data-za-module="TopNavBar">
+				<div class="AppHeader-inner">
+
+					<ul role="navigation" class="Tabs AppHeader-Tabs">
+						<li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+							<a class="Tabs-link AppHeader-TabsLink " href="student.html" data-za-not-track-link="true">
+								首页</a>
+						</li>
+						<li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+							<a class="Tabs-link AppHeader-TabsLink is-active" href="questionList.html" data-za-not-track-link="true">
+								问题</a>
+						</li>
+						<li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+							<a class="Tabs-link AppHeader-TabsLink " href="lessonList.html" data-za-not-track-link="true">
+								课程</a>
+						</li>
+						<li role="tab" class="Tabs-item AppHeader-Tab Tabs-item&#45;&#45;noMeta">
+							<a class="Tabs-link AppHeader-TabsLink  " href="document.html" data-za-not-track-link="true">
+								资料下载</a>
+						</li>
+					</ul>
+					<div class="SearchBar" role="search" data-za-module="PresetWordItem">
+
+						<button onclick="tiwen()" type="button" class="Button SearchBar-askButton Button&#45;&#45;primary Button&#45;&#45;blue">
+							提问</button>
+					</div>
+					<div class="AppHeader-userInfo">
+						<button type="button" class="Button PushNotifications-icon AppHeader-notifications Button&#45;&#45;plain">
+<span style="display:inline-flex;align-items:center">
+​<svg class="Zi Zi&#45;&#45;Bell" fill="currentColor" viewBox="0 0 24 24" width="22" height="22">
+<path d="M4.523 15.076l.804-6.757a6.753 6.753 0 0 1 4.945-5.7 1.823 1.823 0 0 1 3.623 0 6.753 6.753 0 0 1 4.945 5.7l.804 6.757a2.293 2.293 0 0 0 1.712 2.108 1.093 1.093 0 0 1-.297 2.15H3.108a1.093 1.093 0 0 1-.297-2.15 2.293 2.293 0 0 0 1.712-2.108zM12.083 23a2.758 2.758 0 0 1-2.753-2.509.229.229 0 0 1 .232-.24h5.043a.229.229 0 0 1 .232.24 2.759 2.759 0 0 1-2.753 2.51z">
+</path>
+</svg>
+</span>
+
+						</button>
+
+
+						<div class="AppHeader-profile">
+							<a href="personEdit.html">
+								<button type="button" class="Button AppHeader-profileEntry Button--plain">
+									<img id="headerimg" class="Avatar AppHeader-profileAvatar" width="30" height="30" src=""  >
+								</button></a>
+						</div>
+					</div>
+				</div>
+
+			</header>
+
+		</div>
+
+		<div class=" Card TopstoryItem TopstoryItem-isRecommend" style="width: 100%;" tabindex="0">
+			<div class="Feed" style="margin-left: 20%;margin-right: 40%;">
+				<div class="ContentItem AnswerItem"  name="928976504" itemprop="answer" itemtype="http://schema.org/Answer" itemscope="">
+					<h2 class="ContentItem-title">
+						<div itemprop="zhihu:question" itemtype="http://schema.org/Question" itemscope="">
+							<a id="questiontitle" target="_blank" data-za-detail-view-element_name="Title" data-za-detail-view-id="2812" href="#">
+								title    </a>
+						</div>
+					</h2>
+
+					<div class="RichContent is-collapsed">
+
+						<div class="RichContent-inner">
+									<span id="questioncontent" class="RichText ztext CopyrightRichText-richText" itemprop="text">
+								content <br/>
+								1
+									</span>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<div class="QuestionHeader-footer-inner" style="margin-bottom: 0px; margin-top: 30px; margin-left: 20%;">
+
+				<div class="QuestionHeader-main QuestionHeader-footer-main">
+					<div class="QuestionButtonGroup">
+						<button type="button" class="Button FollowButton Button--primary Button--blue">
+							关注问题</button>
+						<button type="button" class="Button Button--blue" onclick=" ff() ">
+			  	  <span style="display: inline-flex; align-items: center;">​
+ 			   <svg class="Zi Zi--Edit QuestionButton-icon" fill="currentColor" viewBox="0 0 24 24" width="16" height="16">
+			 	  <path d="M4.076 16.966a4.19 4.19 0 0 1 1.05-1.76l8.568-8.569a.524.524 0 0 1 .741 0l2.928 2.927a.524.524 0 0 1 0 .74l-8.568 8.57c-.49.49-1.096.852-1.761 1.051l-3.528 1.058a.394.394 0 0 1-.49-.488l1.06-3.53zM20.558 4.83c.59.59.59 1.546 0 2.136l-1.693 1.692a.503.503 0 0 1-.712 0l-2.812-2.812a.504.504 0 0 1 0-.712l1.693-1.693a1.51 1.51 0 0 1 2.135 0l1.389 1.389z">
+
+				  </path></svg></span>写回答
+						</button></div>
+				</div>
+			</div>  </div>
+
+
+
+
+		<main  id="huida"  role="main" class="App-main tiezimoban" style="margin-left: 15%;">
+			<div class="Topstory">
+				<div class="Topstory-container">
+					<div class="Topstory-mainColumn">
+						<div class="Topstory-mainColumnCard">
+
+							<div class="Modal-inner">
+								<div class="Modal-content">
+									<form class="Ask-form" novalidate="" method="post" action="app/askquestion">
+										<div>
+											<div class="Ask-items">
+												<div class="Popover">
+													<label class="AskTitle-input Input-wrapper Input-wrapper--spread Input-wrapper--multiline Input-wrapper--large">
+														回答：
+													</label>
+													<div contenteditable="true" id="addanswercontent"  name="addanswercontent" required=""    style="font-size: 18px; border:1px  solid  #8b95a5;   ">
+														<br/>
+														<br/>
+														<br/>
+													</div>
+													<div class="Ask-item">
+														<div class="AskDetail">
+															<div class="AskDetail-actionsWrapper">
+																<div class="AskDetail-actions">
+																	<button aria-label="展开工具栏" data-tooltip="展开工具栏" data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true" type="button" class="Button Editable-control Button--plain">
+																		<svg class="Zi Zi--Format" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+																			<path d="M6.295 15.4L5.06 19H3L7.684 6h1.813l4.684 13h-2.06l-1.235-3.6h-4.59zM17.092 19c-1.548 0-2.647-.962-2.647-2.391 0-1.428 1.063-2.27 2.916-2.384l1.782-.103v-.43c0-.653-.419-.996-1.286-.996-.724 0-1.194.25-1.323.663l-.046.147H14.7l.027-.234c.161-1.366 1.436-2.24 3.196-2.24 1.93 0 3.076.987 3.076 2.66v5.188h-1.81v-.75c-.5.56-1.243.87-2.098.87zM6.89 13.646h3.4L8.59 8.69l-1.7 4.956zM17.582 15.7c-.901.06-1.267.325-1.267.842 0 .504.439.827 1.146.827.973 0 1.682-.6 1.682-1.383v-.385l-1.56.1z">
+																			</path>
+																		</svg>
+																	</button>
+																	<button    style="position: relative;"   aria-label="插入图片" data-tooltip="插入图片" type="button"   data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true"  class="Button Editable-control Button--plain">
+																		<svg class="Zi Zi--InsertImage" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+																			<path d="M21 17.444C21 18.3 20.1 19 19 19H5c-1.1 0-2-.7-2-1.556V6.556C3 5.7 3.9 5 5 5h14c1.1 0 2 .7 2 1.556v10.888zm-9.437-3.919a.5.5 0 0 1-.862.013l-1.26-2.065a.5.5 0 0 0-.861.012l-2.153 3.767a.5.5 0 0 0 .435.748h10.292a.5.5 0 0 0 .438-.741L14.573 9.78a.5.5 0 0 0-.872-.006l-2.138 3.75z" fill-rule="evenodd">
+																			</path>
+																		</svg>
+																		<input id="file" type="file" accept="image/*"  style=" position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;"   onchange="huixian()" />
+																	</button>
+																	<button   aria-label="上传视频"   style="position: relative;"  data-tooltip="上传视频" data-tooltip-position="bottom" data-tooltip-will-hide-on-click="true" type="button" class="Button Editable-control Button--plain">
+																		<svg class="Zi Zi--InsertVideo" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+																			<path d="M10.546 15c-.466.273-.86.053-.86-.5V9.505c0-.565.385-.778.86-.501l4.278 2.497c.466.272.475.726 0 1.003L10.546 15zM5 5S3 5 3 7v10s0 2 2.002 2H19c2 0 2-2 2-2V7c0-2-2-2-2-2H5z" fill-rule="evenodd">
+																			</path>
+																		</svg>
+																		<input  onchange="huixian()" type="file" accept="video/*"  style=" position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;"    />
+																	</button>
+																</div>
+															</div>
+															<div class="Ask-footer">
+																<div>
+																	<div class="AskOptions">
+																		<label for="anonymous-checkbox" class="AskOptions-label">
+																			<input id="anonymous-checkbox" class="AskOptions-checkbox" type="checkbox">
+																			匿名回答</label>
+																	</div>
+																</div>
+																<div class="Ask-footer-buttonWrapper">
+																	<button   type="button" onclick="xiehuida()" class="Button Button--primary Button--blue">
+																		发布回答</button>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+
+						</div></div></div></div></main>
+
+
+
+<main id="moban" role="main" class="App-main tiezimoban" style="margin-left: 15%;">
+	<div class="Topstory">
+		<div class="Topstory-container">
+			<div class="Topstory-mainColumn">
+				<div class="Topstory-mainColumnCard">
+
+
+					<div class="Modal-inner">
+						<div class="Modal-content">
+							<div class="List-item" tabindex="0"  >
+								<div class="ContentItem AnswerItem"   name="156686524" itemprop="answer" itemtype="http://schema.org/Answer" itemscope="" data-za-detail-view-path-module="AnswerItem"  >
+									<div class="ContentItem-meta">
+										<div class="AuthorInfo AnswerItem-authorInfo AnswerItem-authorInfo--related" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+
+<span class="UserLink AuthorInfo-avatarWrapper">
+<div class="Popover">
+<div id="Popover66-toggle" aria-haspopup="true" aria-expanded="false" aria-owns="Popover66-content">
+<a class="UserLink-link" data-za-detail-view-element_name="User" target="_blank" href="//www.zhihu.com/org/mei-shi-gan-yan-jiu-yuan-51">
+<img id="answertouxiang" class="Avatar AuthorInfo-avatar" width="38" height="38" src="https://pic4.zhimg.com/v2-a6767bf957f50637979d7ede6e448f6e_xs.jpg" srcset="https://pic4.zhimg.com/v2-a6767bf957f50637979d7ede6e448f6e_l.jpg 2x" alt="没事干研究院">
+</a>
+</div>
+</div>
+</span>
+											<div class="AuthorInfo-content">
+												<div class="AuthorInfo-head">
+<span class="UserLink AuthorInfo-name">
+<div class="Popover">
+<div id="Popover67-toggle" aria-haspopup="true" aria-expanded="false" aria-owns="Popover67-content">
+<a id="name" class="UserLink-link" data-za-detail-view-element_name="User" target="_blank" href="#">
+没事干研究院</a>
+</div>
+</div>
+<a class="UserLink-badge" data-tooltip="优秀回答者 · 已认证的官方帐号" href="https://www.zhihu.com/question/48510028" target="_blank" rel="noopener noreferrer">
+<span class="css-18biwo">
+​<svg viewBox="0 0 24 24" width="18" height="18">
+<svg viewBox="0 0 24 24" x="-3" y="-3" fill="#FFFFFF" width="30" height="30">
+<path d="M15.7813142,3.57503307 L15.7854711,3.57151971 L15.8921602,3.69421038 C16.4424581,4.28431051 17.5350358,4.74412453 18.2894455,4.73316843 C19.9333771,4.58833861 21.2181294,5.79159049 21.15505,7.4886116 C21.0701034,8.2865101 21.5265142,9.46606744 22.1127648,10.035647 C23.3717224,11.0894606 23.4353862,12.8395995 22.2012979,14.0008558 C21.5713113,14.5098203 21.0601754,15.6488699 21.0713212,16.4574574 C21.2178026,18.101598 20.0080847,19.4177693 18.3112241,19.3546942 C17.5092159,19.2692363 16.3558202,19.7109277 15.7654686,20.3212774 L15.6621219,20.4336952 C14.6500533,21.6427249 13.0849849,21.6436494 11.9474232,20.5631265 C10.8923672,21.6870601 9.32522077,21.5992584 8.24023034,20.4486779 L8.1078387,20.3064513 C7.55404654,19.712602 6.49129072,19.2608283 5.70952995,19.2733367 L5.54483281,19.2812165 C3.90192421,19.4259562 2.78153527,18.2170275 2.84495915,16.5118397 C2.93043705,15.7096812 2.48857834,14.5554516 1.90697576,13.9902121 C0.646877359,12.9371723 0.564979867,11.1620752 1.79820938,10.0003274 C2.42856138,9.49033387 2.93982368,8.35088862 2.92860713,7.54223086 C2.78363994,5.89831142 3.99233598,4.58198069 5.68797562,4.64483357 C6.48630047,4.72917193 7.66684346,4.2727307 8.23582678,3.68720379 C9.25777524,2.46637146 10.9345424,2.36957086 12.0582149,3.44874212 C13.122914,2.42536528 14.7150653,2.44435809 15.755462,3.54647107 L15.7776557,3.57086138 L15.7813142,3.57503307 Z">
+</path>
+</svg>
+<path d="M2.63951518,13.3895441 C3.70763333,14.2842292 4.44777637,16.1226061 4.30075305,17.5023312 L4.32211542,17.3063047 C4.17509209,18.6910561 5.17786655,19.7063729 6.5613937,19.5844846 L6.364106,19.6008202 C7.75140298,19.4789319 9.57474349,20.2554985 10.4468305,21.3349009 L10.3224262,21.1803415 C11.1982831,22.2647703 12.6257916,22.2723098 13.5167278,21.2079863 L13.3898102,21.3600325 C14.2845162,20.2919393 16.1229361,19.5518136 17.5026934,19.6988334 L17.3054057,19.6774716 C18.6914461,19.8244915 19.7067866,18.8217404 19.5836389,17.4395022 L19.6012314,17.6367853 C19.4793403,16.2482641 20.255925,14.4249662 21.3353526,13.5528995 L21.1807897,13.677301 C22.2639871,12.8014646 22.2727834,11.3739894 21.2084351,10.483074 L21.3604848,10.6099886 C20.2923667,9.71530351 19.5522236,7.87818322 19.6992469,6.49720154 L19.6778846,6.69448464 C19.8249079,5.30847665 18.8221335,4.2944164 17.4386063,4.41630468 L17.635894,4.39871256 C16.248597,4.52185742 14.4252565,3.74529084 13.5531695,2.66588842 L13.6775738,2.81919121 C12.8017169,1.73601905 11.3742084,1.72722299 10.4832722,2.79154644 L10.6101898,2.63950024 C9.71548377,3.70759343 7.87706394,4.44771919 6.49730661,4.30195588 L6.69459432,4.32206116 C5.30855394,4.17504128 4.29447,5.17904888 4.41636114,6.56128713 L4.3987686,6.36400404 C4.52065973,7.75126861 3.74407501,9.57456653 2.66464737,10.4478898 L2.81921035,10.3222318 C1.73601288,11.1993248 1.72721662,12.6255433 2.79156494,13.5164587 L2.63951518,13.3895441 Z" fill="#0084FF" transform="translate(2)">
+</path>
+<path d="M2.63951518,13.3895441 C3.70763333,14.2842292 4.44777637,16.1226061 4.30075305,17.5023312 L4.32211542,17.3063047 C4.17509209,18.6910561 5.17786655,19.7063729 6.5613937,19.5844846 L6.364106,19.6008202 C7.75140298,19.4789319 9.57474349,20.2554985 10.4468305,21.3349009 L10.3224262,21.1803415 C11.1982831,22.2647703 12.6257916,22.2723098 13.5167278,21.2079863 L13.3898102,21.3600325 C14.2845162,20.2919393 16.1229361,19.5518136 17.5026934,19.6988334 L17.3054057,19.6774716 C18.6914461,19.8244915 19.7067866,18.8217404 19.5836389,17.4395022 L19.6012314,17.6367853 C19.4793403,16.2482641 20.255925,14.4249662 21.3353526,13.5528995 L21.1807897,13.677301 C22.2639871,12.8014646 22.2727834,11.3739894 21.2084351,10.483074 L21.3604848,10.6099886 C20.2923667,9.71530351 19.5522236,7.87818322 19.6992469,6.49720154 L19.6778846,6.69448464 C19.8249079,5.30847665 18.8221335,4.2944164 17.4386063,4.41630468 L17.635894,4.39871256 C16.248597,4.52185742 14.4252565,3.74529084 13.5531695,2.66588842 L13.6775738,2.81919121 C12.8017169,1.73601905 11.3742084,1.72722299 10.4832722,2.79154644 L10.6101898,2.63950024 C9.71548377,3.70759343 7.87706394,4.44771919 6.49730661,4.30195588 L6.69459432,4.32206116 C5.30855394,4.17504128 4.29447,5.17904888 4.41636114,6.56128713 L4.3987686,6.36400404 C4.52065973,7.75126861 3.74407501,9.57456653 2.66464737,10.4478898 L2.81921035,10.3222318 C1.73601288,11.1993248 1.72721662,12.6255433 2.79156494,13.5164587 L2.63951518,13.3895441 Z" fill="#FF9607" transform="translate(-2)">
+</path>
+<svg class="Zi Zi--Star" fill="#fff" x="4" y="6" viewBox="0 0 24 24" width="12" height="12">
+<path d="M5.515 19.64l.918-5.355-3.89-3.792c-.926-.902-.639-1.784.64-1.97L8.56 7.74l2.404-4.871c.572-1.16 1.5-1.16 2.072 0L15.44 7.74l5.377.782c1.28.186 1.566 1.068.64 1.97l-3.89 3.793.918 5.354c.219 1.274-.532 1.82-1.676 1.218L12 18.33l-4.808 2.528c-1.145.602-1.896.056-1.677-1.218z" fill-rule="evenodd">
+</path>
+</svg>
+</svg>
+</span>
+</a>
+</span>
+												</div>
+												<div class="AuthorInfo-detail">
+													<div class="AuthorInfo-badge">
+														<div id="introduce" class="AuthorInfo-badgeText">
+															已认证的官方帐号</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="">
+										<div class=" " style="">
+											<!-- <div class="RichText ztext   CopyrightRichText-richText  " itemprop="text"> -->
+											<div id="content" class="" itemprop="text">
+												<p>
+													本文仅限于知乎与「艾格吃饱了」。</p>
+												<br>
+												<p>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div></div></div></div></div></div>
+
+</main>
+
+
+
+
+</div>
+</div>
+
+<script>
+	console.log("userid cookie: "+$.cookie('userid'));
+
+
+	function huixian(img) {
+		var file = $('#file')[0].files[0];
+		var formData = new FormData();
+		formData.append("file", file);
+
+		$.ajax({
+			url: "app/questionImg",//请求路径
+			type: 'POST',
+			cache: false,
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (data) {
+				var path=data;
+				var img=$("<img style='width: 100px;height: 100px;' src="+path+" />")
+				$("#addanswercontent").append("<div style='width: 100%'>")
+				$("#addanswercontent").append(img)
+				$("#addanswercontent").append("</div>")
+			},
+			error: function (err) {
+			}
+		});
+
+	}
+
+	function xiehuida() {
+		var content=$("#addanswercontent").html();
+		console.log( "content:  "+content)
+		var userid=$.cookie('userid');
+
+		var url = document.location.toString();
+		console.log(url)
+		var qu = url.split("?");
+		console.log(qu)
+		qu = qu[1].split("=");
+		console.log(qu)
+		var questionid = qu[1];
+		$("#huida").attr('class','tiezimoban')
+		$.ajax({
+			url: "app/addanswer",
+			cache:false,
+
+			data:{'content':content,'userid':userid,'questionid':questionid,'link':'0','time':0},
+			dataType: "json",
+			type: "post",
+			success: function (data) {
+
+				console.log(data);
+			},
+			error: function (data) {
+				console.log(data.error, data.message);
+			}
+		});
+
+	}
+
+        /*    回答姓名/头像/个人介绍/内容/时间 */
+    function fatie(userid,name,link,introduce,content,time){
+
+        $('#name').text(name);
+        $('#answertouxiang').attr('src',link);
+         
+        $("#content").html(content);
+
+        $("#introduce").text(introduce);
+
+
+        var clone=$("#moban").clone(true);
+        clone.removeClass("tiezimoban");
+
+        $("#root").append(clone);
+		}
+
+    
+</script>
+
+<script>
+    function tiwen(){
+        window.open('askquestion.html', 'newwindow', 'height=300, width=500, top=500, left=500, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
+    }
+
+    //参数解释：
+    //window.open 弹出新窗口的命令；
+    //'page.html' 弹出窗口的文件名；
+    //'newwindow' 弹出窗口的名字（不是文件名），非必须，可用空''代替；
+    //height=100 窗口高度；
+    //width=400 窗口宽度；
+    //top=0 窗口距离屏幕上方的象素值；
+    //left=0 窗口距离屏幕左侧的象素值；
+    //toolbar=no 是否显示工具栏，yes为显示；
+    //menubar，scrollbars 表示菜单栏和滚动栏。
+    //resizable=no 是否允许改变窗口大小，yes为允许；
+    //location=no 是否显示地址栏，yes为允许；
+    //status=no 是否显示状态栏内的信息（通常是文件已经打开），yes为允许；
+</script>
+
+
+<script>
+
+
+		var url = document.location.toString();
+		console.log(url)
+		var qu = url.split("?");
+		console.log(qu)
+		qu = qu[1].split("=");
+		console.log(qu)
+		var questionid = qu[1];
+		console.log(questionid)
+		$.ajax({
+			url: "app/getquestion",
+			cache:false,
+			data: "questionid=" + questionid,
+			dataType: "json",
+			type: "post",
+			success: function (data) {
+				$("#questioncontent").html(data.content);
+				$("#questiontitle").text(data.title);
+				console.log(data);
+			},
+			error: function (data) {
+				console.log(data.error, data.message);
+			}
+		})
+		$.ajax({
+			url: "app/getanswerlist",
+
+			data: "questionid=" + questionid,
+			dataType: "json",
+			type: "post",
+			success: function (data) {
+				for (var i = 0; i < data.length; i++) {
+					fatie(data[i].userid, data[i].name, data[i].link, data[i].introduce, data[i].content, data[i].time);
+				}
+				console.log(data);
+
+			},
+			error: function (data) {
+				console.log(data.error, data.message);
+			}
+		})
+
+
+
+	function ff() {
+
+			$('#huida').removeClass('tiezimoban');
+
+	}
+
+
+		if($.cookie('touxiang').length>0){
+			$("#headerimg").attr('src',$.cookie('touxiang'));
+		}
+		console.log($.cookie('touxiang'));
+</script>
+</body>
+</html>
